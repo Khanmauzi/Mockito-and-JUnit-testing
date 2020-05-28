@@ -11,3 +11,15 @@ To unit test a controller we dont need to run the entire application, wo we use 
 
 to test the restController we use MockMvc
 
+
+
+DataJPATest:
+DAtaJpaTest can be used with any JPA implementation
+It creates the tables and execute the data.sql file for us.
+thus it makes our database ready for the test
+
+In typica DataJpaTest all the elements related with the data are launched
+1. In memory database is created
+2. All the tables are created
+
+

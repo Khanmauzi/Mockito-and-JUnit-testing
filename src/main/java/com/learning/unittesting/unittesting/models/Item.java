@@ -1,10 +1,7 @@
 package com.learning.unittesting.unittesting.models;
 
-import jdk.nashorn.internal.objects.annotations.Constructor;
 import lombok.Data;
-import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 import org.springframework.stereotype.Service;
 
 import javax.persistence.Entity;
