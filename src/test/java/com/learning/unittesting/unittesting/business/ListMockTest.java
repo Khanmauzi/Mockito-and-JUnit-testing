@@ -4,6 +4,7 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mockito.ArgumentCaptor;
 
+import java.util.ArrayList;
 import java.util.List;
 
 import static org.mockito.ArgumentMatchers.anyInt;
@@ -74,4 +75,41 @@ public class ListMockTest {
         assertEquals("Something1",values.get(1));
     }
 
+    @Test
+    public void mocking() {
+        ArrayList arrayList = mock(ArrayList.class);
+        System.out.println(arrayList.get(0)); //null
+        System.out.println(arrayList.size()); //0
+
+        arrayList.add("Test1");
+        arrayList.add("Test2");
+
+        System.out.println(arrayList.get(0)); //null
+        System.out.println(arrayList.size()); //0
+
+        when(arrayList.size()).thenReturn(5);
+        System.out.println(arrayList.size()); //5
+
+    }
+
+    @Test
+    public void spying() {
+        ArrayList arrayList = spy(ArrayList.class);
+        arrayList.add("Test0");
+        System.out.println(arrayList.get(0)); //Test0
+        System.out.println(arrayList.size()); //1
+
+        arrayList.add("Test1");
+        arrayList.add("Test2");
+
+        System.out.println(arrayList.get(0)); //Test0
+        System.out.println(arrayList.size()); //3
+
+        when(arrayList.size()).thenReturn(5);
+        System.out.println(arrayList.size()); //5
+
+        arrayList.add("Test3");
+        System.out.println(arrayList.size()); //5
+
+    }
 }

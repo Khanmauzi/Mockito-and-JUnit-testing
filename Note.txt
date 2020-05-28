@@ -1,0 +1,13 @@
+MOCK:
+A mock doesn't retain the behavior(code) of the original class!
+
+SPY:
+The thing about spying is that it uses real class.
+when we use spy the original behavior of class is retain and we can stub the specific method
+
+
+WEB MVC TEST:
+To unit test a controller we dont need to run the entire application, wo we use WebMvcTest annotation over our test class
+
+to test the restController we use MockMvc
+
