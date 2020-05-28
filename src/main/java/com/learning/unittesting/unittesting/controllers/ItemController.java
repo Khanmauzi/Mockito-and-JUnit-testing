@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("")
 public class ItemController {
@@ -29,5 +31,14 @@ public class ItemController {
     @GetMapping("/item-from-business-service")
     public Item  itemFromBusinessServcie() {
         return itemBusinessServcie.retreiveHardcodeItem();
+    }
+
+    @GetMapping("/all-items-from-database")
+    public List<Item> retrieveAllItem() {
+        List<Item> items = itemBusinessServcie.retrieveAllItems();
+        for(Item item: items){
+            item.setValue(item.getPrice()*item.getQuantity());
+        }
+        return items;
     }
 }
