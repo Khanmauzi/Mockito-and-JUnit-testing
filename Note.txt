@@ -23,3 +23,12 @@ In typica DataJpaTest all the elements related with the data are launched
 2. All the tables are created
 
 
+To do Integration Testing we use  @SpringBootTest
+It launches entire application
+It search for its parent packages and looks for @SpringBootAppliation, once found then launch the application
+It also in-memory database
+
+
+If you want your Integration test class to start with specific properties file then you can use @TestPropertySource
+ @TestPropertySource(locations = {"classpath: "})
+

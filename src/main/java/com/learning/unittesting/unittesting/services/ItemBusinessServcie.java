@@ -9,12 +9,11 @@ import java.util.List;
 
 @Service
 public class ItemBusinessServcie {
-    @Autowired
-    Item item;
 
     @Autowired
     private ItemRepository itemRepository;
     public Item retreiveHardcodeItem(){
+        Item item = new Item();
         item.setId(1);
         item.setName("Ball");
         item.setPrice(100);

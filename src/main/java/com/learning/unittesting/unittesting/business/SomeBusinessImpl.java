@@ -7,11 +7,14 @@ import lombok.Setter;
 import org.springframework.stereotype.Component;
 import org.springframework.stereotype.Service;
 
+import java.lang.reflect.Array;
+import java.util.Arrays;
+import java.util.Optional;
+import java.util.OptionalInt;
+
 @Data
 public class SomeBusinessImpl {
 
-    @Getter
-    @Setter
     private SomeDataService someDataService;
 
     public int calculateSum(int[] data){
@@ -29,5 +32,12 @@ public class SomeBusinessImpl {
             sum+=val;
         }
         return sum;
+    }
+
+    public int calculateSumUsingFunctionalPrgramming(int[] data) {
+//        OptionalInt number = Arrays.stream(data).reduce(Integer::sum);
+//        return number.orElse(0);
+        //short method
+        return Arrays.stream(data).reduce(Integer::sum).orElse(0);
     }
 }
